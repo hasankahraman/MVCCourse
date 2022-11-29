@@ -51,9 +51,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\ICategoryDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
+    <Compile Include="EntityFramework\EFAboutDAL.cs" />
+    <Compile Include="EntityFramework\EFCategoryDAL.cs" />
+    <Compile Include="EntityFramework\EFContactDAL.cs" />
+    <Compile Include="EntityFramework\EFContentDAL.cs" />
+    <Compile Include="EntityFramework\EFHeadingDAL.cs" />
+    <Compile Include="EntityFramework\EFWriterDAL.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
