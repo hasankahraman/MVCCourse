@@ -59,5 +59,12 @@ namespace MVCCourse.Controllers
             //categoryManager.CategoryUpdate(category);
             return View(category);
         }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(Category category)
+        {
+            categoryManager.CategoryUpdate(category);
+            return RedirectToAction("Index");
+        }
     }
 }
