@@ -45,5 +45,19 @@ namespace MVCCourse.Controllers
             return View();
             
         }
+
+        public ActionResult DeleteCategory(int id)
+        {
+            var category = categoryManager.GetById(id);
+            categoryManager.CategoryDelete(category);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
+        {
+            var category = categoryManager.GetById(id);
+            //categoryManager.CategoryUpdate(category);
+            return View(category);
+        }
     }
 }
