@@ -20,6 +20,7 @@ namespace BussinessLayer.ValidationRules
             RuleFor(x => x.Name).MaximumLength(50).WithMessage("yazar adı en fazla 50 karakter olmalıdır.");
             RuleFor(x => x.Surname).MaximumLength(50).WithMessage("yazar soyadı en fazla 50 karakter olmalıdır.");
             RuleFor(x => x.About).Matches("a").WithMessage("Hakkında alanında mutlaka 'a' karakteri bulunmalıdır.");
+            RuleFor(x => x.Title).NotEmpty().WithMessage("Ünvan alanı boş olamaz.");
 
         }
     }

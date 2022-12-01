@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDAL.cs" />
+    <Compile Include="Abstract\IHeadingDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -66,6 +67,10 @@
     <Compile Include="Migrations\202211301857166_initMigration.cs" />
     <Compile Include="Migrations\202211301857166_initMigration.designer.cs">
       <DependentUpon>202211301857166_initMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212010833385_TitleAddedForWriterClass.cs" />
+    <Compile Include="Migrations\202212010833385_TitleAddedForWriterClass.designer.cs">
+      <DependentUpon>202212010833385_TitleAddedForWriterClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +88,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202211301857166_initMigration.resx">
       <DependentUpon>202211301857166_initMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212010833385_TitleAddedForWriterClass.resx">
+      <DependentUpon>202212010833385_TitleAddedForWriterClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
