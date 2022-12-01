@@ -15,6 +15,7 @@ namespace MVCCourse.Controllers
         // GET: Heading
         HeadingManager headingManager = new HeadingManager(new EFHeadingDAL());
         CategoryManager categoryManager = new CategoryManager(new EFCategoryDAL());
+        WriterManager writerManager = new WriterManager(new EFWriterDAL());
         public ActionResult Index()
         {
             var headings = headingManager.GetList();
@@ -30,6 +31,15 @@ namespace MVCCourse.Controllers
                                                    Value = x.CategoryId.ToString()
                                                }).ToList();
             ViewBag.Categories = categories;
+
+            List<SelectListItem> writer = (from x in writerManager.List()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.Name + " " + x.Surname,
+                                                   Value = x.WriterId.ToString()
+                                               }).ToList();
+            ViewBag.Writer = writer;
+
             return View();
         }
         [HttpPost]

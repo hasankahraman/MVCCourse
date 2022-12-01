@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryDAL.cs" />
+    <Compile Include="Abstract\IContentDAL.cs" />
     <Compile Include="Abstract\IHeadingDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
@@ -71,6 +72,14 @@
     <Compile Include="Migrations\202212010833385_TitleAddedForWriterClass.cs" />
     <Compile Include="Migrations\202212010833385_TitleAddedForWriterClass.designer.cs">
       <DependentUpon>202212010833385_TitleAddedForWriterClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212011954282_MigrationImageSizeChangedTo250Char.cs" />
+    <Compile Include="Migrations\202212011954282_MigrationImageSizeChangedTo250Char.designer.cs">
+      <DependentUpon>202212011954282_MigrationImageSizeChangedTo250Char.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212012110496_StatusAddedForWriterClass.cs" />
+    <Compile Include="Migrations\202212012110496_StatusAddedForWriterClass.designer.cs">
+      <DependentUpon>202212012110496_StatusAddedForWriterClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -91,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212010833385_TitleAddedForWriterClass.resx">
       <DependentUpon>202212010833385_TitleAddedForWriterClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212011954282_MigrationImageSizeChangedTo250Char.resx">
+      <DependentUpon>202212011954282_MigrationImageSizeChangedTo250Char.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212012110496_StatusAddedForWriterClass.resx">
+      <DependentUpon>202212012110496_StatusAddedForWriterClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
