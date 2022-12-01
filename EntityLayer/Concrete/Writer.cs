@@ -16,10 +16,12 @@ namespace EntityLayer.Concrete
         public string Surname { get; set; }
         [StringLength(100)]
         public string Image { get; set; }
-        [StringLength(50)]
+        [StringLength(200)]
         public string Email { get; set; }
-        [StringLength(20)]
+        [StringLength(200)]
         public string Password { get; set; }
+        [StringLength(100)]
+        public string About { get; set; }
         public ICollection<Heading> Headings { get; set; }
         public ICollection<Content> Contents { get; set; }
     }
