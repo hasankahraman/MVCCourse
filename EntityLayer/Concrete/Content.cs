@@ -13,6 +13,7 @@ namespace EntityLayer.Concrete
         [StringLength(1000)]
         public string Value { get; set; }
         public DateTime CreatedAt { get; set; }
+        public bool Status { get; set; }
         public int HeadingId { get; set; }
         public virtual Heading Heading { get; set; }
         public int? WriterId { get; set; }

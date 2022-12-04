@@ -49,5 +49,43 @@ namespace MVCCourse.Controllers
             headingManager.HeadingAdd(heading);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult UpdateHeading(int id)
+        {
+            List<SelectListItem> categories = (from x in categoryManager.GetList()
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.Name,
+                                                   Value = x.CategoryId.ToString()
+                                               }).ToList();
+            ViewBag.Categories = categories;
+
+            List<SelectListItem> writer = (from x in writerManager.List()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.Name + " " + x.Surname,
+                                               Value = x.WriterId.ToString()
+                                           }).ToList();
+            ViewBag.Writers = writer;
+
+            var heading = headingManager.GetById(id);
+            return View(heading);
+        }
+        [HttpPost]
+        public ActionResult UpdateHeading(Heading heading)
+        {
+            heading.CreatedAt = DateTime.Now;
+            heading.WriterId = heading.WriterId;
+            headingManager.HeadingUpdate(heading);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeleteHeading(int id)
+        {
+            var heading = headingManager.GetById(id);
+            heading.Status = false;
+            headingManager.HeadingDelete(heading);
+            return RedirectToAction("Index");
+        }
     }
 }

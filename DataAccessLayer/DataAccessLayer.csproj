@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IAboutDAL.cs" />
     <Compile Include="Abstract\ICategoryDAL.cs" />
     <Compile Include="Abstract\IContentDAL.cs" />
     <Compile Include="Abstract\IHeadingDAL.cs" />
@@ -81,6 +82,14 @@
     <Compile Include="Migrations\202212012110496_StatusAddedForWriterClass.designer.cs">
       <DependentUpon>202212012110496_StatusAddedForWriterClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212031445348_addedStatusToContentClass.cs" />
+    <Compile Include="Migrations\202212031445348_addedStatusToContentClass.designer.cs">
+      <DependentUpon>202212031445348_addedStatusToContentClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212031448558_addedStatusToAllClasses.cs" />
+    <Compile Include="Migrations\202212031448558_addedStatusToAllClasses.designer.cs">
+      <DependentUpon>202212031448558_addedStatusToAllClasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,6 +115,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212012110496_StatusAddedForWriterClass.resx">
       <DependentUpon>202212012110496_StatusAddedForWriterClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031445348_addedStatusToContentClass.resx">
+      <DependentUpon>202212031445348_addedStatusToContentClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212031448558_addedStatusToAllClasses.resx">
+      <DependentUpon>202212031448558_addedStatusToAllClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
