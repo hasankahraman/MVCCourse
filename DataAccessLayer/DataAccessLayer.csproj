@@ -57,6 +57,7 @@
     <Compile Include="Abstract\IContactDAL.cs" />
     <Compile Include="Abstract\IContentDAL.cs" />
     <Compile Include="Abstract\IHeadingDAL.cs" />
+    <Compile Include="Abstract\IMessageDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
     <Compile Include="Concrete\Context.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="EntityFramework\EFContactDAL.cs" />
     <Compile Include="EntityFramework\EFContentDAL.cs" />
     <Compile Include="EntityFramework\EFHeadingDAL.cs" />
+    <Compile Include="EntityFramework\EFMessageDAL.cs" />
     <Compile Include="EntityFramework\EFWriterDAL.cs" />
     <Compile Include="Migrations\202211301857166_initMigration.cs" />
     <Compile Include="Migrations\202211301857166_initMigration.designer.cs">
@@ -90,6 +92,14 @@
     <Compile Include="Migrations\202212031448558_addedStatusToAllClasses.cs" />
     <Compile Include="Migrations\202212031448558_addedStatusToAllClasses.designer.cs">
       <DependentUpon>202212031448558_addedStatusToAllClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212051751066_AddedMessageClassAndCreateTimeColumnForContactClass.cs" />
+    <Compile Include="Migrations\202212051751066_AddedMessageClassAndCreateTimeColumnForContactClass.designer.cs">
+      <DependentUpon>202212051751066_AddedMessageClassAndCreateTimeColumnForContactClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212051753440_AddedMessageClassToContext.cs" />
+    <Compile Include="Migrations\202212051753440_AddedMessageClassToContext.designer.cs">
+      <DependentUpon>202212051753440_AddedMessageClassToContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -122,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212031448558_addedStatusToAllClasses.resx">
       <DependentUpon>202212031448558_addedStatusToAllClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212051751066_AddedMessageClassAndCreateTimeColumnForContactClass.resx">
+      <DependentUpon>202212051751066_AddedMessageClassAndCreateTimeColumnForContactClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212051753440_AddedMessageClassToContext.resx">
+      <DependentUpon>202212051753440_AddedMessageClassToContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

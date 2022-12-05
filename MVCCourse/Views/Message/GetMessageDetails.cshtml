@@ -1,9 +1,10 @@
 ﻿@using EntityLayer.Concrete
-@model Contact
+@model Message
 @{
-    ViewBag.Title = "GetContactMessageDetails";
+    ViewBag.Title = "GetMessageDetails";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+
 <body class="hold-transition sidebar-mini">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -37,13 +38,17 @@
                                 <h5><b>Konu:</b> @Model.Subject</h5>
                                 <br />
                                 <h6>
-                                    <b>Kimden:</b> @Model.UserMail
+                                    <b>Kimden:</b> @Model.SenderMail
+                                    <span class="mailbox-read-time float-right">@Model.CreatedAt</span>
+                                </h6>
+                                <h6>
+                                    <b>Kime:</b> @Model.ReceiverMail
                                 <span class="mailbox-read-time float-right">@(((DateTime)Model.CreatedAt).ToString("dd-MMM-yyyy"))</span>
                                 </h6>
                             </div>
                             <!-- /.mailbox-read-info -->
                             <div class="mailbox-read-message">
-                                @Model.Message
+                                @Model.Value
                             </div>
                             <!-- /.mailbox-read-message -->
                             <div class="mailbox-controls with-border text-center mt-3">
@@ -76,3 +81,4 @@
         </div>
     </section>
 </body>
+

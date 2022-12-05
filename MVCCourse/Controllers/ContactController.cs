@@ -14,6 +14,7 @@ namespace MVCCourse.Controllers
         // GET: Contact
         ContactManager contactManager = new ContactManager(new EFContactDAL());
         ContactValidator validator = new ContactValidator();
+        MessageManager messageManager = new MessageManager(new EFMessageDAL());
         public ActionResult Index()
         {
             var contacts = contactManager.GetList();
@@ -24,6 +25,13 @@ namespace MVCCourse.Controllers
         {
             var contact = contactManager.GetById(id);
             return View(contact);
+        }
+        public PartialViewResult MailMenuPartialView()
+        {
+            ViewBag.ContactNumber = contactManager.GetList().Count;
+            ViewBag.MessageInboxCount = messageManager.GetListInbox().Count;
+            ViewBag.MessageSentBoxCount = messageManager.GetListSentbox().Count;
+            return PartialView();
         }
     }
 }
