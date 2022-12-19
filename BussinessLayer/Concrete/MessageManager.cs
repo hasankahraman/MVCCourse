@@ -25,12 +25,12 @@ namespace BussinessLayer.Concrete
 
         public List<Message> GetListInbox()
         {
-            return _messageDAL.List(x => x.ReceiverMail == "admin@admin.com");
+            return _messageDAL.List(x => x.ReceiverMail == "admin@admin.com").OrderByDescending(x => x.CreatedAt).ToList(); ;
         }
 
         public List<Message> GetListSentbox()
         {
-            return _messageDAL.List(x => x.SenderMail == "admin@admin.com");
+            return _messageDAL.List(x => x.SenderMail == "admin@admin.com").OrderByDescending(x => x.CreatedAt).ToList(); ;
         }
 
         public void MessageAdd(Message message)

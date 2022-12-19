@@ -39,11 +39,11 @@
                                 <br />
                                 <h6>
                                     <b>Kimden:</b> @Model.SenderMail
-                                    <span class="mailbox-read-time float-right">@Model.CreatedAt</span>
+                                <span class="mailbox-read-time float-right">@(((DateTime)Model.CreatedAt).ToString("dd-MMM-yyyy"))</span>
                                 </h6>
                                 <h6>
                                     <b>Kime:</b> @Model.ReceiverMail
-                                <span class="mailbox-read-time float-right">@(((DateTime)Model.CreatedAt).ToString("dd-MMM-yyyy"))</span>
+                                @*<span class="mailbox-read-time float-right">@(((DateTime)Model.CreatedAt).ToString("dd-MMM-yyyy"))</span>*@
                                 </h6>
                             </div>
                             <!-- /.mailbox-read-info -->

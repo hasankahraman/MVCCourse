@@ -139,6 +139,8 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
+    <Compile Include="Controllers\ErrorPageController.cs" />
+    <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HeadingController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IstatistikController.cs" />
@@ -151,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AdminLTE-3.0.4\.gitignore" />
+    <Content Include="AdminLTE-3.0.4\404style.css" />
     <Content Include="AdminLTE-3.0.4\build\config\postcss.config.js" />
     <Content Include="AdminLTE-3.0.4\build\config\rollup.config.js" />
     <Content Include="AdminLTE-3.0.4\build\js\AdminLTE.js" />
@@ -169,6 +172,10 @@
     <Content Include="AdminLTE-3.0.4\build\npm\DocsPublish.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Plugins.js" />
     <Content Include="AdminLTE-3.0.4\build\npm\Publish.js" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\css\style.css" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\img\bg.jpg" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\index.html" />
+    <Content Include="AdminLTE-3.0.4\colorlib-error-404-10\readme.txt" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\adminlte.min.css" />
     <Content Include="AdminLTE-3.0.4\dist\css\alt\adminlte.components.css" />
@@ -307,6 +314,15 @@
     <Content Include="AdminLTE-3.0.4\docs\_layouts\home.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\page.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\post.html" />
+    <Content Include="AdminLTE-3.0.4\images\bern.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\hague.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\malmo.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\minsk.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\norwich.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\pristina.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\sarajevo.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\tbilisi.jpg" />
+    <Content Include="AdminLTE-3.0.4\images\wroclaw.jpg" />
     <Content Include="AdminLTE-3.0.4\index.html" />
     <Content Include="AdminLTE-3.0.4\index2.html" />
     <Content Include="AdminLTE-3.0.4\index3.html" />
@@ -2298,6 +2314,8 @@
     <Content Include="Views\Message\Sentbox.cshtml" />
     <Content Include="Views\Message\AddMessage.cshtml" />
     <Content Include="Views\Message\GetMessageDetails.cshtml" />
+    <Content Include="Views\ErrorPage\Page404.cshtml" />
+    <Content Include="Views\Gallery\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -2,6 +2,7 @@
 using BussinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace MVCCourse.Controllers
     {
         // GET: Message
         MessageManager messageManager = new MessageManager(new EFMessageDAL());
-        //MessageValidator validator = new MessageValidator();
+        MessageValidator validator = new MessageValidator();
         public ActionResult Inbox()
         {
             var messages = messageManager.GetListInbox();
@@ -33,7 +34,24 @@ namespace MVCCourse.Controllers
         [HttpPost]
         public ActionResult AddMessage(Message message)
         {
-            return RedirectToAction("Inbox");
+            message.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
+            message.SenderMail = "admin@admin.com";
+
+            ValidationResult result = validator.Validate(message);
+            if (result.IsValid)
+            {
+                messageManager.MessageAdd(message);
+
+                return RedirectToAction("Sentbox");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
         }
         public ActionResult GetMessageDetails(int id)
         {
