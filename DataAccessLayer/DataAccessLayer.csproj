@@ -60,6 +60,7 @@
     <Compile Include="Abstract\IImageFileDAL.cs" />
     <Compile Include="Abstract\IMessageDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IUserDAL.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
@@ -107,6 +108,10 @@
     <Compile Include="Migrations\202212191916427_AddedImageFileClass.designer.cs">
       <DependentUpon>202212191916427_AddedImageFileClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202212201138478_UserTableAdded.cs" />
+    <Compile Include="Migrations\202212201138478_UserTableAdded.designer.cs">
+      <DependentUpon>202212201138478_UserTableAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -147,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212191916427_AddedImageFileClass.resx">
       <DependentUpon>202212191916427_AddedImageFileClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212201138478_UserTableAdded.resx">
+      <DependentUpon>202212201138478_UserTableAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
