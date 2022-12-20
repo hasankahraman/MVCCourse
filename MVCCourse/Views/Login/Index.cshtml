@@ -26,24 +26,25 @@
                         <div class="img d-flex align-items-center justify-content-center" style="background-image: url(/AdminLTE-3.0.4/login-form-19/images/bg.png);"></div>
                         <h3 class="text-center mb-0">Hoşgeldin</h3>
                         <p class="text-center">Aşağıda yer alan bilgileri doldurarak giriş yap!</p>
-                        <form action="#" class="login-form">
-                            <div class="form-group">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                <input type="text" class="form-control" placeholder="Kullanıcı Adı" required>
-                            </div>
-                            <div class="form-group">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                                <input type="password" class="form-control" placeholder="Şifre" required>
-                            </div>
-                            <div class="form-group d-md-flex">
-                                <div class="w-100 text-md-right">
-                                    <a href="#">Şifreni Mi Unuttun ?</a>
+                            @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+                            {
+                                <div class="form-group">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
+                                    <input type="text" class="form-control"name="Name" placeholder="Kullanıcı Adı" required>
                                 </div>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Giriş Yap</button>
-                            </div>
-                        </form>
+                                <div class="form-group">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                                    <input type="password" class="form-control" name="Password" placeholder="Şifre" required>
+                                </div>
+                                <div class="form-group d-md-flex">
+                                    <div class="w-100 text-md-right">
+                                        <a href="#">Şifreni Mi Unuttun ?</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn form-control btn-primary rounded submit px-3">Giriş Yap</button>
+                                </div>
+                            }
                         <div class="w-100 text-center mt-4 text">
                             <p class="mb-0">Hesabın yok mu ?</p>
                             <a href="#">Kayıt Ol</a>

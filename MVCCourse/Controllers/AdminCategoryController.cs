@@ -14,7 +14,7 @@ namespace MVCCourse.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager = new CategoryManager(new EFCategoryDAL());
-
+        [Authorize(Roles="B")]
         public ActionResult Index()
         {
             var categories = categoryManager.GetList();

@@ -16,5 +16,7 @@ namespace BussinessLayer.Abstract
         void UserDelete(User user);
         void UserUpdate(User user);
         bool Login(User user);
+        User GetByName(string name);
+
     }
 }

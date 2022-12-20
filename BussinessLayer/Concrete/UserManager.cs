@@ -23,6 +23,11 @@ namespace BussinessLayer.Concrete
             return _userDAL.Get(x=> x.UserId == id);
         }
 
+        public User GetByName(string name)
+        {
+            return _userDAL.Get(x => x.Name == name);
+        }
+
         public List<User> GetList()
         {
             return _userDAL.List();
@@ -30,6 +35,10 @@ namespace BussinessLayer.Concrete
 
         public bool Login(User user)
         {
+            if (_userDAL.Get(x=> x.Name == user.Name && x.Password == user.Password)!=null)
+            {
+                return true;
+            }
             return false;
         }
 

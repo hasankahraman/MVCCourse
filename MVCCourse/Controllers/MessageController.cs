@@ -16,6 +16,7 @@ namespace MVCCourse.Controllers
         // GET: Message
         MessageManager messageManager = new MessageManager(new EFMessageDAL());
         MessageValidator validator = new MessageValidator();
+        [Authorize]
         public ActionResult Inbox()
         {
             var messages = messageManager.GetListInbox();
@@ -56,6 +57,8 @@ namespace MVCCourse.Controllers
         public ActionResult GetMessageDetails(int id)
         {
             var message = messageManager.GetById(id);
+            message.IsRead = true;
+            messageManager.MessageUpdate(message);
             return View(message);
         }
     }

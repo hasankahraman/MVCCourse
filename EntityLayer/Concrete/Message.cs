@@ -20,5 +20,6 @@ namespace EntityLayer.Concrete
         public string Value { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool Status { get; set; }
+        public bool IsRead { get; set; }
     }
 }

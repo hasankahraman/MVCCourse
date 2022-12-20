@@ -71,6 +71,7 @@
     <Compile Include="EntityFramework\EFHeadingDAL.cs" />
     <Compile Include="EntityFramework\EFImageFileDAL.cs" />
     <Compile Include="EntityFramework\EFMessageDAL.cs" />
+    <Compile Include="EntityFramework\EFUserDAL.cs" />
     <Compile Include="EntityFramework\EFWriterDAL.cs" />
     <Compile Include="Migrations\202211301857166_initMigration.cs" />
     <Compile Include="Migrations\202211301857166_initMigration.designer.cs">
@@ -111,6 +112,10 @@
     <Compile Include="Migrations\202212201138478_UserTableAdded.cs" />
     <Compile Include="Migrations\202212201138478_UserTableAdded.designer.cs">
       <DependentUpon>202212201138478_UserTableAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202212202103546_AddedIsReadColumnForMessageAndContactClasses.cs" />
+    <Compile Include="Migrations\202212202103546_AddedIsReadColumnForMessageAndContactClasses.designer.cs">
+      <DependentUpon>202212202103546_AddedIsReadColumnForMessageAndContactClasses.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202212201138478_UserTableAdded.resx">
       <DependentUpon>202212201138478_UserTableAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202212202103546_AddedIsReadColumnForMessageAndContactClasses.resx">
+      <DependentUpon>202212202103546_AddedIsReadColumnForMessageAndContactClasses.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
