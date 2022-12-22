@@ -14,5 +14,6 @@ namespace BussinessLayer.Abstract
         Contact GetById(int id);
         void ContactDelete(Contact contact);
         void ContactUpdate(Contact contact);
+        int ContactUnreadCount();
     }
 }

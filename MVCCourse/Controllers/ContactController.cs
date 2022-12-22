@@ -28,9 +28,9 @@ namespace MVCCourse.Controllers
         }
         public PartialViewResult MailMenuPartialView()
         {
-            ViewBag.ContactNumber = contactManager.GetList().Count;
-            ViewBag.MessageInboxCount = messageManager.GetListInbox().Count;
-            ViewBag.MessageSentBoxCount = messageManager.GetListSentbox().Count;
+            ViewBag.ContactNumber = contactManager.ContactUnreadCount();
+            ViewBag.MessageInboxCount = messageManager.MessageUnreadCount();
+            ViewBag.MessageSentBoxCount = messageManager.MessageSentboxCount();
             return PartialView();
         }
     }

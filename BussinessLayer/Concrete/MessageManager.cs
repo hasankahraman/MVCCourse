@@ -43,6 +43,16 @@ namespace BussinessLayer.Concrete
             _messageDAL.Delete(message);
         }
 
+        public int MessageSentboxCount()
+        {
+            return _messageDAL.List(x => (x.IsRead == false) && (x.SenderMail == "admin@admin.com")).Count;
+        }
+
+        public int MessageUnreadCount()
+        {
+            return _messageDAL.List(x => (x.IsRead == false) && (x.ReceiverMail == "admin@admin.com")).Count;
+        }
+
         public void MessageUpdate(Message message)
         {
             _messageDAL.Update(message);

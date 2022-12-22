@@ -20,11 +20,10 @@
         <tr>
             <td>@item.AboutId</td>
             <td>Başlık</td>
-            <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
-            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+            <td><a href="/About/ActivateAbout/" class="btn btn-warning">Aktif Yap</a></td>
+            <td><a href="/About/DeactivateAbout/" class="btn btn-danger">Pasif Yap</a></td>
         </tr>
     }
-
 </table>
 <br />
 @Html.Action("AddAboutOnPartialView","About")
