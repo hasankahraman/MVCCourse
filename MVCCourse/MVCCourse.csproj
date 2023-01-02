@@ -2017,6 +2017,16 @@
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.css" />
     <Content Include="AdminLTE-3.0.4\plugins\toastr\toastr.min.js" />
     <Content Include="AdminLTE-3.0.4\starter.html" />
+    <Content Include="AdminLTE-3.0.4\web\css\style.css" />
+    <Content Include="AdminLTE-3.0.4\web\images\5.jpg" />
+    <Content Include="AdminLTE-3.0.4\web\images\img1.jpg" />
+    <Content Include="AdminLTE-3.0.4\web\images\sprite.png" />
+    <Content Include="AdminLTE-3.0.4\web\index.html" />
+    <Content Include="AdminLTE-3.0.4\web\js\bars.js" />
+    <Content Include="AdminLTE-3.0.4\web\js\easyResponsiveTabs.js" />
+    <Content Include="AdminLTE-3.0.4\web\js\jquery-1.11.1.min.js" />
+    <Content Include="AdminLTE-3.0.4\web\js\jquery.circlechart.js" />
+    <Content Include="AdminLTE-3.0.4\web\w3layouts-License.txt" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

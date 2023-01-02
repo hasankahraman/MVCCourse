@@ -15,5 +15,7 @@ namespace BussinessLayer.Abstract
         Message GetById(int id);
         void MessageDelete(Message message);
         void MessageUpdate(Message message);
+        int MessageUnreadCount();
+        int MessageSentboxCount();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BussinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,11 @@ namespace BussinessLayer.Concrete
         public void ContactDelete(Contact contact)
         {
             _contactDAL.Delete(contact);
+        }
+
+        public int ContactUnreadCount()
+        {
+            return _contactDAL.List(x => (x.IsRead == false)).Count;
         }
 
         public void ContactUpdate(Contact contact)

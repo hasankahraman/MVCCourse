@@ -62,5 +62,21 @@ namespace MVCCourse.Controllers
             return PartialView();
         }
 
+        [HttpPost]
+        public ActionResult ActivateAbout(About about)
+        {
+            about.Status = true;
+            aboutManager.AboutUpdate(about);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult DeactivateAbout(About about)
+        {
+            about.Status = false;
+            aboutManager.AboutUpdate(about);
+            return RedirectToAction("Index");
+        }
+
     }
 }
