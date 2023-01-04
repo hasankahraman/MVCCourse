@@ -10,6 +10,7 @@ namespace MVCCourse.Controllers
     {
         // GET: Login
         UserManager manager = new UserManager(new EFUserDAL());
+        WriterManager writerManager = new WriterManager(new EFWriterDAL());
 
         [HttpGet]
         public ActionResult Index()
@@ -30,6 +31,27 @@ namespace MVCCourse.Controllers
             {
                 ViewBag.LoginError = "Kullanıcı adı veya şifre hatalı ya da yok.";
                 return RedirectToAction("Index"); 
+            }
+        }
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult WriterLogin(Writer writer)
+        {
+            var isLoginSuccessful = writerManager.Login(writer);
+            if (isLoginSuccessful)
+            {
+                FormsAuthentication.SetAuthCookie(writer.Name, false);
+                Session["Name"] = writer.Name;
+                return RedirectToAction("MyHeadings", "WriterPanel");
+            }
+            else
+            {
+                ViewBag.LoginError = "Kullanıcı adı veya şifre hatalı ya da yok.";
+                return RedirectToAction("WriterLogin");
             }
         }
     }

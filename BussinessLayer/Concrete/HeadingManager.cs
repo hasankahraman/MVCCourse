@@ -30,7 +30,7 @@ namespace BussinessLayer.Concrete
 
         public List<Heading> GetListByWriter()
         {
-            return _headingDAL.List(x=> x.WriterId == 1);
+            return _headingDAL.List(x=> x.WriterId == 1002);
         }
 
         public void HeadingAdd(Heading heading)

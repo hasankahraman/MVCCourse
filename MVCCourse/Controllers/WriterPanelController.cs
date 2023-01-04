@@ -21,7 +21,7 @@ namespace MVCCourse.Controllers
 
         public ActionResult MyHeadings()
         {
-            var myHeadings = headingManager.GetListByWriter().Where(x => x.Status == true) ;
+            var myHeadings = headingManager.GetListByWriter();
             return View(myHeadings);
         }
         [HttpGet]
@@ -40,7 +40,7 @@ namespace MVCCourse.Controllers
         public ActionResult AddHeading(Heading heading)
         {
             heading.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
-            heading.WriterId = 1;
+            heading.WriterId = 1002;
             heading.Status = true;
             headingManager.HeadingAdd(heading);
             return RedirectToAction("MyHeadings");
@@ -62,7 +62,7 @@ namespace MVCCourse.Controllers
         public ActionResult UpdateHeading(Heading heading)
         {
             heading.CreatedAt = DateTime.Now;
-            heading.WriterId = 1;
+            heading.WriterId = 1002;
             headingManager.HeadingUpdate(heading);
             return RedirectToAction("MyHeadings");
         }

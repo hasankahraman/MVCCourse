@@ -1,0 +1,84 @@
+﻿@using EntityLayer.Concrete
+@model Message
+@{
+    ViewBag.Title = "GetMessageDetails";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<body class="hold-transition sidebar-mini">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Compose</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- /.row -->
+            <div class="row">
+                @Html.Action("MessageListMenu", "WriterPanelMessage")
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h3 class="card-title">E-Posta İçeriği</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Previous"><i class="fas fa-chevron-left"></i></a>
+                                <a href="#" class="btn btn-tool" data-toggle="tooltip" title="Next"><i class="fas fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body p-0">
+                            <div class="mailbox-read-info">
+                                <h5><b>Konu:</b> @Model.Subject</h5>
+                                <br />
+                                <h6>
+                                    <b>Kimden:</b> @Model.SenderMail
+                                    <span class="mailbox-read-time float-right">@(((DateTime)Model.CreatedAt).ToString("dd-MMM-yyyy"))</span>
+                                </h6>
+                                <h6>
+                                    <b>Kime:</b> @Model.ReceiverMail
+                                    @*<span class="mailbox-read-time float-right">@(((DateTime)Model.CreatedAt).ToString("dd-MMM-yyyy"))</span>*@
+                                </h6>
+                            </div>
+                            <!-- /.mailbox-read-info -->
+                            <div class="mailbox-read-message">
+                                @Model.Value
+                            </div>
+                            <!-- /.mailbox-read-message -->
+                            <div class="mailbox-controls with-border text-center mt-3">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Sil">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="Cevapla">
+                                        <i class="fas fa-reply"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" data-container="body" title="İlet">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Yazdır">
+                                    <i class="fas fa-print"></i>
+                                </button>
+                            </div>
+                            <!-- /.mailbox-controls -->
+
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div>
+    </section>
+</body>
+

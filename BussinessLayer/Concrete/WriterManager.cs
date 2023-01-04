@@ -1,5 +1,6 @@
 ﻿using BussinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,15 @@ namespace BussinessLayer.Concrete
         public List<Writer> List()
         {
             return _writerDAL.List();
+        }
+
+        public bool Login(Writer writer)
+        {
+            if (_writerDAL.Get(x => x.Email == writer.Email && x.Password == writer.Password) != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void WriterAdd(Writer writer)

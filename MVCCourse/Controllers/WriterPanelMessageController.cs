@@ -39,7 +39,7 @@ namespace MVCCourse.Controllers
         public ActionResult AddMessage(Message message)
         {
             message.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
-            message.SenderMail = "admin@admin.com";
+            message.SenderMail = "hasan@hasan.com";
 
             ValidationResult result = validator.Validate(message);
             if (result.IsValid)
