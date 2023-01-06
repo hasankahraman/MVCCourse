@@ -14,6 +14,6 @@ namespace BussinessLayer.Abstract
         Heading GetById(int id);
         void HeadingDelete(Heading heading);
         void HeadingUpdate(Heading heading);
-        List<Heading> GetListByWriter();
+        List<Heading> GetListByWriter(int id);
     }
 }

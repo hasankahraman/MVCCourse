@@ -12,9 +12,14 @@ namespace MVCCourse.Controllers
     {
         // GET: WriterPanelContent
         ContentManager contentManager = new ContentManager(new EFContentDAL());
+        WriterManager writerManager = new WriterManager(new EFWriterDAL());
         public ActionResult MyContents()
         {
-            var contents = contentManager.GetListByWriter();
+            int id;
+            var sessionInfo = (string)Session["Email"];
+            id = writerManager.GetWriterIdBySession(sessionInfo);
+
+            var contents = contentManager.GetListByWriter(id);
             return View(contents);
         }
     }

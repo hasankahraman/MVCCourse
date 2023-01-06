@@ -6,12 +6,12 @@ using System.Web.Security;
 
 namespace MVCCourse.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         // GET: Login
         UserManager manager = new UserManager(new EFUserDAL());
         WriterManager writerManager = new WriterManager(new EFWriterDAL());
-
         [HttpGet]
         public ActionResult Index()
         {
@@ -44,8 +44,8 @@ namespace MVCCourse.Controllers
             var isLoginSuccessful = writerManager.Login(writer);
             if (isLoginSuccessful)
             {
-                FormsAuthentication.SetAuthCookie(writer.Name, false);
-                Session["Name"] = writer.Name;
+                FormsAuthentication.SetAuthCookie(writer.Email, false);
+                Session["Email"] = writer.Email;
                 return RedirectToAction("MyHeadings", "WriterPanel");
             }
             else

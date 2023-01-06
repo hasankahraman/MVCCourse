@@ -14,6 +14,7 @@ namespace MVCCourse.Controllers
         // GET: WriterPanel
         HeadingManager headingManager = new HeadingManager(new EFHeadingDAL());
         CategoryManager categoryManager = new CategoryManager(new EFCategoryDAL());
+        WriterManager writerManager = new WriterManager(new EFWriterDAL());
         public ActionResult WriterProfile()
         {
             return View();
@@ -21,7 +22,9 @@ namespace MVCCourse.Controllers
 
         public ActionResult MyHeadings()
         {
-            var myHeadings = headingManager.GetListByWriter();
+            var sessionInfo = (string)Session["Email"];
+            int writerID = writerManager.GetWriterIdBySession(sessionInfo);
+            var myHeadings = headingManager.GetListByWriter(writerID);
             return View(myHeadings);
         }
         [HttpGet]
@@ -39,8 +42,10 @@ namespace MVCCourse.Controllers
         [HttpPost]
         public ActionResult AddHeading(Heading heading)
         {
+            var sessionInfo = (string)Session["Email"];
+            int writerID = writerManager.GetWriterIdBySession(sessionInfo);
+            heading.WriterId = writerID;
             heading.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
-            heading.WriterId = 1002;
             heading.Status = true;
             headingManager.HeadingAdd(heading);
             return RedirectToAction("MyHeadings");
@@ -61,8 +66,10 @@ namespace MVCCourse.Controllers
         [HttpPost]
         public ActionResult UpdateHeading(Heading heading)
         {
+            var sessionInfo = (string)Session["Email"];
+            int writerID = writerManager.GetWriterIdBySession(sessionInfo);
             heading.CreatedAt = DateTime.Now;
-            heading.WriterId = 1002;
+            heading.WriterId = writerID;
             headingManager.HeadingUpdate(heading);
             return RedirectToAction("MyHeadings");
         }
