@@ -23,14 +23,14 @@ namespace BussinessLayer.Concrete
             return _messageDAL.Get(x => x.MessageId == id);
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string param)
         {
-            return _messageDAL.List(x => x.ReceiverMail == "admin@admin.com").OrderByDescending(x => x.CreatedAt).ToList(); ;
+            return _messageDAL.List(x => x.ReceiverMail == param).OrderByDescending(x => x.CreatedAt).ToList(); ;
         }
 
-        public List<Message> GetListSentbox()
+        public List<Message> GetListSentbox(string param)
         {
-            return _messageDAL.List(x => x.SenderMail == "admin@admin.com").OrderByDescending(x => x.CreatedAt).ToList(); ;
+            return _messageDAL.List(x => x.SenderMail == param).OrderByDescending(x => x.CreatedAt).ToList(); ;
         }
 
         public void MessageAdd(Message message)
@@ -43,14 +43,14 @@ namespace BussinessLayer.Concrete
             _messageDAL.Delete(message);
         }
 
-        public int MessageSentboxCount()
+        public int MessageSentboxCount(string param)
         {
-            return _messageDAL.List(x => (x.IsRead == false) && (x.SenderMail == "admin@admin.com")).Count;
+            return _messageDAL.List(x => x.SenderMail == param).Count;
         }
 
-        public int MessageUnreadCount()
+        public int MessageUnreadCount(string param)
         {
-            return _messageDAL.List(x => (x.IsRead == false) && (x.ReceiverMail == "admin@admin.com")).Count;
+            return _messageDAL.List(x => (x.IsRead == false) && (x.ReceiverMail == param)).Count;
         }
 
         public void MessageUpdate(Message message)

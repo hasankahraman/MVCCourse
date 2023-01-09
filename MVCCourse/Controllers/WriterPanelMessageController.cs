@@ -22,12 +22,14 @@ namespace MVCCourse.Controllers
         }
         public ActionResult Inbox()
         {
-            var messages = messageManager.GetListInbox();
+            var sessionInfo = (string)Session["Email"];
+            var messages = messageManager.GetListInbox(sessionInfo);
             return View(messages);
         }
         public ActionResult Sentbox()
         {
-            var messages = messageManager.GetListSentbox();
+            var sessionInfo = (string)Session["Email"];
+            var messages = messageManager.GetListSentbox(sessionInfo);
             return View(messages);
         }
         [HttpGet]
@@ -38,8 +40,9 @@ namespace MVCCourse.Controllers
         [HttpPost]
         public ActionResult AddMessage(Message message)
         {
+            var sessionInfo = (string)Session["Email"];
             message.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
-            message.SenderMail = "hasan@hasan.com";
+            message.SenderMail = sessionInfo;
 
             ValidationResult result = validator.Validate(message);
             if (result.IsValid)
@@ -67,6 +70,9 @@ namespace MVCCourse.Controllers
 
         public PartialViewResult MessageListMenu()
         {
+            var sessionInfo = (string)Session["Email"];
+            ViewBag.MessageInboxCount = messageManager.MessageUnreadCount(sessionInfo);
+            ViewBag.MessageSentBoxCount = messageManager.MessageSentboxCount(sessionInfo);
             return PartialView();
         }
     }

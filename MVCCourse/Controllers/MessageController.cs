@@ -19,12 +19,14 @@ namespace MVCCourse.Controllers
         [Authorize]
         public ActionResult Inbox()
         {
-            var messages = messageManager.GetListInbox();
+            var sessionInfo = (string)Session["Email"];
+            var messages = messageManager.GetListInbox(sessionInfo);
             return View(messages);
         }
         public ActionResult Sentbox()
         {
-            var messages = messageManager.GetListSentbox();
+            var sessionInfo = (string)Session["Email"];
+            var messages = messageManager.GetListSentbox(sessionInfo);
             return View(messages);
         }
         [HttpGet]
@@ -35,8 +37,9 @@ namespace MVCCourse.Controllers
         [HttpPost]
         public ActionResult AddMessage(Message message)
         {
+            var sessionInfo = (string)Session["Email"];
             message.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
-            message.SenderMail = "admin@admin.com";
+            message.SenderMail = sessionInfo;
 
             ValidationResult result = validator.Validate(message);
             if (result.IsValid)

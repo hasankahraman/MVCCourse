@@ -20,7 +20,11 @@ namespace MVCCourse.Controllers
         ContentManager contentManager = new ContentManager(new EFContentDAL());
         public ActionResult WriterProfile()
         {
-            return View();
+            var sessionInfo = (string)Session["Email"];
+            int writerID = writerManager.GetWriterIdBySession(sessionInfo);
+
+            var writer = writerManager.GetById(writerID);
+            return View(writer);
         }
 
         public ActionResult MyHeadings()
