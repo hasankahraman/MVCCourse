@@ -16,5 +16,6 @@ namespace BussinessLayer.Abstract
         Content GetById(int id);
         void ContentDelete(Content content);
         void ContentUpdate(Content content);
+        List<Content> GetList(string search);
     }
 }

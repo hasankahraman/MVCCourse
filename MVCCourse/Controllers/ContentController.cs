@@ -23,5 +23,17 @@ namespace MVCCourse.Controllers
             var contents = contentManager.GetListByHeadingId(id);
             return View(contents);
         }
+
+        public ActionResult GetAllContent()
+        {
+            var allContent = contentManager.GetList();
+            return View(allContent);
+        }
+        [HttpPost]
+        public ActionResult GetAllContent(string search)
+        {
+            var allContent = contentManager.GetList(search);
+            return View(allContent);
+        }
     }
 }

@@ -44,6 +44,11 @@ namespace BussinessLayer.Concrete
             return _contentDAL.List();
         }
 
+        public List<Content> GetList(string search)
+        {
+            return _contentDAL.List(x => x.Value.Contains(search));
+        }
+
         public List<Content> GetListByHeadingId(int headingId)
         {
             return _contentDAL.List(x => x.HeadingId == headingId);
