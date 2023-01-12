@@ -21,6 +21,11 @@ namespace MVCCourse.Controllers
             var headings = headingManager.GetList();
             return View(headings);
         }
+        public ActionResult HeadingReport()
+        {
+            var headings = headingManager.GetList();
+            return View(headings);
+        }
         [HttpGet]
         public ActionResult AddHeading()
         {
